@@ -4,44 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orbit Blog Engine - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: sans-serif;
+            font-family: 'Roboto Mono', monospace; /* Futuristic monospace font */
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f4f4f4; /* Light grey background */
-            color: #333; /* Dark grey text */
+            background: linear-gradient(135deg, #0a0a0a, #1e1e1e); /* Dark gradient background */
+            color: #eee; /* Light text color */
             text-align: center;
+            overflow: hidden; /* Prevent scrollbars from background animation */
         }
 
+        /* Animated Background - Subtle moving lines */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%; /* Wider than viewport for animation */
+            height: 200%; /* Taller than viewport for animation */
+            background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 10px, transparent 10px, transparent 20px);
+            transform: rotate(-10deg); /* Slight angle for lines */
+            animation: moveLines 20s linear infinite;
+            opacity: 0.7;
+            z-index: -1; /* Behind content */
+        }
+
+        @keyframes moveLines {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+
         .container {
-            padding: 20px;
-            background-color: #fff; /* White container background */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark container */
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.3); /* Cyan glow effect */
+            backdrop-filter: blur(10px); /* Glassmorphism blur effect */
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #007bff; /* Blue heading color */
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #00bfff; /* Vibrant cyan heading color */
+            letter-spacing: 0.05em; /* Slight letter spacing for modern look */
+            text-shadow: 0 0 10px #00bfff; /* Glow effect on heading */
+            text-transform: uppercase; /* Uppercase for a techy feel */
         }
 
         p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            color: #ccc; /* Lighter paragraph text */
+            letter-spacing: 0.02em;
         }
 
         .coming-soon {
-            font-size: 1.8em;
+            font-size: 2.2em;
             font-weight: bold;
-            color: #dc3545; /* Red "Coming Soon" color */
+            color: #ff8c00; /* Orange "Coming Soon" color */
+            text-shadow: 0 0 15px #ff8c00; /* Glow effect on "Coming Soon" */
+            animation: pulseColor 2s infinite alternate ease-in-out; /* Pulsating color animation */
         }
 
-        @media (max-width: 600px) {
+        @keyframes pulseColor {
+            0% { color: #ff8c00; text-shadow: 0 0 15px #ff8c00; }
+            100% { color: #ffa500; text-shadow: 0 0 25px #ffa500; } /* Slightly brighter end color */
+        }
+
+
+        @media (max-width: 768px) { /* Adjust for tablets */
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+            .coming-soon {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) { /* Adjust for phones */
+            .container {
+                padding: 20px;
+            }
             h1 {
                 font-size: 2em;
             }
@@ -49,16 +107,16 @@
                 font-size: 1em;
             }
             .coming-soon {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Orbit Blog Engine</h1>
-        <p>by DeepOrbit</p>
-        <p class="coming-soon">Coming Soon</p>
+        <h1>ORBIT BLOG ENGINE</h1>
+        <p>by DEEPORBIT</p>
+        <p class="coming-soon">COMING SOON</p>
     </div>
 </body>
 </html>
